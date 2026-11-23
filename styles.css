@@ -1,0 +1,93 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f0f0f0;
+}
+
+header {
+  background: #1e66d0;
+  color: white;
+  padding: 10px 20px;
+}
+
+h1 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.card[hidden] {
+  display: none;
+}
+
+.aviso {
+  border-left: 4px solid #1e66d0;
+}
+
+input, select, button {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.secundario {
+  background: #e4e4e4;
+}
+
+select {
+  display: block;
+  width: 100%;
+  margin: 6px 0 10px;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 14px;
+  margin: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.etiqueta {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.etiqueta.alta { background: #b7f5c4; }
+.etiqueta.aprox { background: #f5e1b7; }
+
+.confirmacion {
+  font-weight: bold;
+}

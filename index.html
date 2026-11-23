@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWA Geo - Ubicación Consciente</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#1e66d0">
+</head>
+<body>
+  <header>
+    <h1>Reporte con Ubicación</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Ubicación del reporte</h2>
+      <p>Adjunta las coordenadas para ubicar tu reporte técnico.</p>
+      <button id="btn-ubicacion" type="button">Adjuntar mi ubicación</button>
+    </section>
+
+    <!-- Pre-permiso: se muestra antes del diálogo nativo -->
+    <section class="card aviso" id="tarjeta-pre" hidden>
+      <h2>¿Por qué pedimos tu ubicación?</h2>
+      <p>Necesitamos tu ubicación aproximada para adjuntar las coordenadas al reporte técnico y calcular la sucursal más cercana. Solo se lee una vez, al confirmar.</p>
+      <div class="acciones">
+        <button id="btn-confirmar" type="button">Compartir mi ubicación</button>
+        <button id="btn-cancelar" type="button" class="secundario">Ahora no</button>
+      </div>
+    </section>
+
+    <section class="card" id="tarjeta-carga" hidden>
+      <p>Obteniendo coordenadas...</p>
+    </section>
+
+    <section class="card" id="tarjeta-resultado" hidden>
+      <h2>Ubicación obtenida</h2>
+      <p id="res-etiqueta" class="etiqueta"></p>
+      <dl>
+        <dt>Latitud</dt><dd id="res-lat"></dd>
+        <dt>Longitud</dt><dd id="res-lon"></dd>
+        <dt>Precisión (accuracy)</dt><dd id="res-prec"></dd>
+        <dt>Hora de lectura</dt><dd id="res-hora"></dd>
+      </dl>
+    </section>
+
+    <!-- Plan B: selector manual de zona -->
+    <section class="card" id="tarjeta-manual" hidden>
+      <h2>Elige tu zona manualmente</h2>
+      <p id="mensaje-manual"></p>
+      <label for="select-zona">Zona o ciudad</label>
+      <select id="select-zona">
+        <option value="">-- Selecciona --</option>
+        <option>Cuernavaca</option>
+        <option>Jiutepec</option>
+        <option>Temixco</option>
+        <option>Emiliano Zapata</option>
+        <option>Cuautla</option>
+        <option>Otra zona</option>
+      </select>
+      <button id="btn-zona" type="button">Usar esta zona</button>
+      <p id="zona-elegida" class="confirmacion"></p>
+    </section>
+  </main>
+
+  <script src="./geo-helper.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
